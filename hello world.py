@@ -1,7 +1,11 @@
-print("hello world")
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
 
-a = [1, 2, 3, 4, 5];
+url = 'https://www.voanews.com/a/trump-offers-contradictory-explanation-for-comey-firing/4417821.html'
+html_doc = urlopen(url)
+soup = BeautifulSoup(html_doc, "html.parser")
 
-print(a)
+print(soup)
 
-b = [1 2;3 ;4;5;];
+print("tile", soup.title)
+
